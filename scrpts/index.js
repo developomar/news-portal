@@ -7,25 +7,45 @@ const loadCategory = async () => {
   const buttonContainer = document.getElementById("button-container");
   data.data.news_category.forEach((item) => {
     const categoryButton = document.createElement("button");
-    categoryButton.className = `px-2 py-1 hover:text-[#5D5FEF] hover:bg-[#EEEFFF] rounded-md`;
+    categoryButton.className = `category-button px-2 py-1 hover:text-[#5D5FEF] hover:bg-[#EEEFFF] duration-[0.5s] rounded-md`;
     categoryButton.innerText = item.category_name;
     categoryButton.addEventListener('click', () =>{
         loadNews(item.category_id)
+        const allButtons = document.querySelectorAll('.category-button');
+                for (const button of allButtons){
+                    button.classList.remove('bg-[#EEEFFF]');
+                    button.classList.remove('text-[#5D5FEF]');
+                }
+               categoryButton.classList.add('bg-[#EEEFFF]');
+               categoryButton.classList.add('text-[#5D5FEF]');
+        
+
     })
     buttonContainer.appendChild(categoryButton);
   });
 };
 
 const loadNews = async (categoryID) => {
+    document.getElementById('loading').classList.remove('hidden')
   const response = await fetch(
     `https://openapi.programming-hero.com/api/news/category/${categoryID}`
   );
   const data = await response.json();
 
   const newsContainer = document.getElementById("news-container");
+  const errorContent = document.getElementById('error-content')
+    if(data.data.length === 0){
+        errorContent.classList.remove('hidden')
+        document.getElementById('loading').classList.add('hidden');
+    }
+    else {
+        errorContent.classList.add('hidden')
+    }
   newsContainer.innerHTML = ''
   
+   
   data.data.forEach((item) => {
+    document.getElementById('loading').classList.add('hidden');
     const newsDiv = document.createElement("div");
     newsDiv.className = `mt-[60px] flex justify-between items-center  gap-4 p-5 bg-[#FFF]  rounded-xl shadow-lg`;
     newsDiv.innerHTML = `
@@ -63,6 +83,19 @@ const loadNews = async (categoryID) => {
     newsContainer.appendChild(newsDiv);
   });
 };
+
+
+const handleSearch = () => {
+    const inputValue = document.getElementById('search-box').value;
+
+    if(inputValue) {
+        loadNews(inputValue)
+    }
+    else{
+        alert('please enter a valid id')
+    }
+
+}
 
 loadNews("01");
 

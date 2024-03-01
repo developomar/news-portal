@@ -36,15 +36,15 @@
 
   <!-- ----------news category section----------- -->
   <div id="button-container" class="text-[#A3A3A3] mt-7 flex justify-between">
-    <button class= " px-2 py-1 hover:text-[#5D5FEF] hover:bg-[#EEEFFF] rounded-md">Home</button>
+    <a href=""><button class= "category-button px-2 py-1 hover:text-[#5D5FEF] hover:bg-[#EEEFFF] rounded-md">Home</button></a>
    
   </div>
 
   <!-- search section -->
   
-  <div class="flex mt-11">
-    <div class="flex-1 flex gap-3 items-center text-[#5D5FEF] w-full px-3 py-4 bg-[#FFF] rounded-l-md border-[1px] border-[#5D5FEF]"><i class="fa-solid fa-magnifying-glass"></i><input class="w-full text-[#A3A3A3] outline-none" type="text" name="" id="" placeholder="Search News"></div>
-    <button class="px-20 py-4 bg-[#5D5FEF] rounded-r-md text-[#F8F8F8]">Search</button>
+  <div class="flex mt-11 w-[80%] mx-auto">
+    <div class="flex-1 flex gap-3 items-center text-[#5D5FEF] w-full px-3 py-4 bg-[#FFF] rounded-l-md border-[1px] border-[#5D5FEF]"><i class="fa-solid fa-magnifying-glass"></i><input class="w-full text-[#A3A3A3] outline-none" type="text" name="" id="search-box" placeholder="Search News"></div>
+    <button onclick="handleSearch()" class="px-20 py-4 bg-[#5D5FEF] rounded-r-md text-[#F8F8F8]">Search</button>
   </div> 
 </header>  
 
@@ -58,6 +58,22 @@
     <div class="space-x-3">
       <button class="p-3 rounded-md border-[1px] border-[#5D5FEF] text-[1.125rem] text-[#5D5FEF] hover:bg-[#5D5FEF] hover:text-[#FFF]">Today's Pick</button>
       <button class="p-3 rounded-md border-[1px] border-[#5D5FEF] text-[1.125rem] text-[#5D5FEF] hover:bg-[#5D5FEF] hover:text-[#FFF]">Trending</button>
+    </div>
+  </div>
+
+
+  <!-- loading section -->
+
+  <div id="loading" class="hidden">
+    <div class="flex flex-col gap-4 w-full">
+      <div class="flex gap-4 items-center">
+        <div class="skeleton w-32 h-32 rounded-full shrink-0"></div>
+        <div class="flex flex-col gap-4">
+          <div class="skeleton h-12 w-72"></div>
+          <div class="skeleton h-12 w-72"></div>
+        </div>
+      </div>
+      <div class="skeleton h-52 w-full"></div>
     </div>
   </div>
 
@@ -97,6 +113,11 @@
       </div>
     </div> -->
   </div>
+
+  <div id="error-content" class="flex flex-col items-center hidden">
+    <img src="Assets/Icon.png" alt="">
+    <p class="text-[#171717] text-[2rem] font-bold sm:w-[433px] text-center">Oops!! Sorry, There is no content here</p>
+</div>
   
 
 </section>
