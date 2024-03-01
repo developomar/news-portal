@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Portal</title>
+
+
+  <!-- tail and daisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+  <!-- --------google fonts---------- -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
+
+</head>
+<body class="bg-[#F6F6F6]">
+<header class="container px-7 pt-7 mx-auto">
+  <nav class="flex justify-between pb-8 border-b-[1px] border-[#CDCDCD]">
+  <div><a class="text-[#5D5FEF] font-bold" href=""><span class="p-2 bg-[#5D5FEF] rounded-md text-[#F8F8F8]">News</span> Portal</a></div>
+  <div class=" flex gap-10 text-[#A3A3A3]">
+    <button class="hover:text-[#5D5FEF] hover:font-bold hover:underline">News</button>
+    <button class="hover:text-[#5D5FEF] hover:font-bold hover:underline">Blog</button>
+    <img src="assets/Avatar.png" alt="">
+  </div>
+  </nav>
+
+  <!-- ----------news category section----------- -->
+  <div id="button-container" class="text-[#A3A3A3] mt-7 flex justify-between">
+    <button class= " px-2 py-1 hover:text-[#5D5FEF] hover:bg-[#EEEFFF] rounded-md">Home</button>
+   
+  </div>
+
+  <!-- search section -->
+  
+  <div class="flex mt-11">
+    <div class="flex-1 flex gap-3 items-center text-[#5D5FEF] w-full px-3 py-4 bg-[#FFF] rounded-l-md border-[1px] border-[#5D5FEF]"><i class="fa-solid fa-magnifying-glass"></i><input class="w-full text-[#A3A3A3] outline-none" type="text" name="" id="" placeholder="Search News"></div>
+    <button class="px-20 py-4 bg-[#5D5FEF] rounded-r-md text-[#F8F8F8]">Search</button>
+  </div> 
+</header>  
+
+<main class="container px-7 pt-7 mx-auto">
+<!-- -----------news sectin------------ -->
+<section class="mt-10">
+  <div class="flex justify-between">
+    <div class="flex items-center gap-3">
+      <label class="text-[#000] text-[1.125rem]" for="select">Sort By View :</label> <div class="p-4 bg-[#FFF] text-[#ABADC6] rounded-md"><select name="" id="" ><option value="">Default</option></select></div>
+    </div>
+    <div class="space-x-3">
+      <button class="p-3 rounded-md border-[1px] border-[#5D5FEF] text-[1.125rem] text-[#5D5FEF] hover:bg-[#5D5FEF] hover:text-[#FFF]">Today's Pick</button>
+      <button class="p-3 rounded-md border-[1px] border-[#5D5FEF] text-[1.125rem] text-[#5D5FEF] hover:bg-[#5D5FEF] hover:text-[#FFF]">Trending</button>
+    </div>
+  </div>
+
+
+  <!-- ------------news------------- -->
+  <div id="news-container" class="grid grid-cols-1 ">
+    <!-- <div class="mt-[60px] flex gap-4 p-5 bg-[#FFF]  rounded-xl shadow-xl">
+      <div class="w-[35%]"><img src="assets/unsplash_EhTcC9sYXsw.png" alt=""></div>
+      <div class="w-60%">
+        <h2 class="text-[#121221] text-[1.5rem] font-bold mb-3">The best fashion influencers to follow for sartorial inspiration</h2>
+        <p class="text-[#949494]">From our favourite UK influencers to the best missives from Milan and the coolest New Yorkers, read on some of the best fashion blogs out there, and for even more inspiration, do head to our separate black fashion influencer round-up.
+  
+          Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black Friday and Gucci Black Friday...</p>
+          <div class="flex items-center justify-between gap-4 mt-8">
+            <div class="flex gap-3">
+              <div><img src="assets/Rectangle 19.png" alt=""></div>
+              <div>
+                <p class="text-[#2B2C34] text-[1.125rem]">Jane Cooper</p>
+                <p class="text-[#718797] text-[0.875rem]">Jan 10, 2022 </p>
+              </div>
+            </div>
+  
+            <div class="flex gap-3">
+              <img src="assets/carbon_view.png" alt="">
+              <p class="text-[#515151] text-[1.125rem] font-bold"><span>1.5</span>M</p>
+            </div>
+  
+            <div class="flex gap-2">
+              <img src="assets/bxs_star-half.png" alt="">
+              <img src="assets/ant-design_star-outlined.png" alt="">
+              <img src="assets/ant-design_star-outlined.png" alt="">
+              <img src="assets/ant-design_star-outlined.png" alt="">
+              <img src="assets/ant-design_star-outlined.png" alt="">
+            </div>
+            <div><button><img src="assets/bi_arrow-right-short.png" alt=""></button></div>
+          </div>
+      </div>
+    </div> -->
+  </div>
+  
+
+</section>
+
+</main>
+
+<footer class="mt-20 py-8 bg-[#FFF] text-center">
+  <p class="text-[#949494] font-bold">Copyright 2021 News Portal</p>
+</footer>
+
+<!-- ------------------srcipts---------------- -->
+
+<script src="https://kit.fontawesome.com/daf44b3af6.js" crossorigin="anonymous"></script>
+<script src="scrpts/index.js"></script>
+
+</body>
+</html>
